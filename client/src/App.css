@@ -1,0 +1,30 @@
+.btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+  background-color: #46B13D !important;
+  border-color: #46B13D !important;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+  color: #999999 !important;
+  background-color: #F1F1F1 !important;
+  border-color: #F1F1F1 !important;
+}
+
+.btn-info, .btn-info:hover, .btn-info:active, .btn-info:visited {
+  color: #3860AD !important;
+  background-color: #EBF2FF !important;
+  border-color: #EBF2FF !important;
+}
+
+.nav-link.active {
+  background-color: #EBF2FF !important;
+}
+
+.nav-editor {
+  color: #999999 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.nav-editor.active {
+  color: #3860AD !important;
+}

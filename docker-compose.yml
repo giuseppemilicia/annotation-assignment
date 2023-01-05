@@ -1,0 +1,28 @@
+version: "3.3"
+
+services:
+  client:
+    build: ./client
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+  server:
+    build: ./server
+    command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+    volumes:
+      - ./server/:/usr/src/app/
+    ports:
+      - 8002:8000
+    environment:
+      - DATABASE_URL=mysql://test_user:test_user@db/test_db
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.31-debian
+    environment:
+      - MYSQL_DATABASE=test_db
+      - MYSQL_USER=test_user
+      - MYSQL_PASSWORD=test_user
+      - MYSQL_ROOT_PASSWORD=test_user
+      - MYSQL_PORT=3306
